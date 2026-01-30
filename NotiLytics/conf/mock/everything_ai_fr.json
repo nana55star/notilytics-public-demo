@@ -1,0 +1,26 @@
+{
+  "status": "ok",
+  "totalResults": 2,
+  "articles": [
+    {
+      "source": { "id": "le-monde", "name": "Le Monde" },
+      "author": "Marie Dupont",
+      "title": "L'intelligence artificielle révolutionne le journalisme",
+      "description": "Des experts expliquent comment l'IA transforme le travail des rédactions.",
+      "url": "https://www.lemonde.fr/technologies/ia-journalisme",
+      "urlToImage": "https://cdn.lemonde.fr/ia-journalisme.jpg",
+      "publishedAt": "2025-10-29T08:00:00Z",
+      "content": "Les outils d'intelligence artificielle sont de plus en plus utilisés pour résumer, vérifier et diffuser des articles."
+    },
+    {
+      "source": { "id": "france24", "name": "France 24" },
+      "author": "Jean Martin",
+      "title": "Peut-on faire confiance à l’IA pour repérer les fake news ?",
+      "description": "Une étude récente montre que certains modèles d'apprentissage automatique surpassent les humains dans la détection de fausses informations.",
+      "url": "https://www.france24.com/fr/ia-fake-news",
+      "urlToImage": "https://static.france24.com/media/ia-fake-news.jpg",
+      "publishedAt": "2025-10-28T12:30:00Z",
+      "content": "L'intelligence artificielle pourrait devenir un outil clé dans la lutte contre la désinformation."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# IDE metadata
+.idea/
+
+# Play / sbt build output
+NotiLytics/project/target/
+NotiLytics/project/project/
+NotiLytics/dist/
+NotiLytics/logs/
+NotiLytics/.bsp/
+NotiLytics/RUNNING_PID
+
+NotiLytics/test/README.md
+NotiLytics/test/controllers/SearchControllerTest.java

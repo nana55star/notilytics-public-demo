@@ -1,0 +1,38 @@
+{
+  "en": {
+    "status": "ok",
+    "totalResults": 1,
+    "articles": [
+      {
+        "source": { "id": "bbc-news", "name": "BBC News" },
+        "title": "AI is reshaping the future of journalism",
+        "description": "Experts discuss how artificial intelligence is changing newsroom workflows.",
+        "language": "en"
+      }
+    ]
+  },
+  "fr": {
+    "status": "ok",
+    "totalResults": 1,
+    "articles": [
+      {
+        "source": { "id": "le-monde", "name": "Le Monde" },
+        "title": "L'intelligence artificielle révolutionne le journalisme",
+        "description": "Des experts expliquent comment l'IA transforme le travail des rédactions.",
+        "language": "fr"
+      }
+    ]
+  },
+  "ar": {
+    "status": "ok",
+    "totalResults": 1,
+    "articles": [
+      {
+        "source": { "id": "aljazeera", "name": "الجزيرة" },
+        "title": "الذكاء الاصطناعي يعيد تشكيل الإعلام",
+        "description": "يستكشف الخبراء تأثير الذكاء الاصطناعي على مستقبل الصحافة.",
+        "language": "ar"
+      }
+    ]
+  }
+}

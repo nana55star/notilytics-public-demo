@@ -1,0 +1,62 @@
+@(title: String)
+
+@main(title) {
+  <section>
+    <h1>@title</h1>
+    <p id="ws-description">This page shows word-frequency statistics for the latest articles matching a search query. Use the "Word Stats" link above the results to view stats for a specific query.</p>
+
+    <div id="ws-controls" class="mb-3"></div>
+    <div id="ws-content">Loading…</div>
+  </section>
+
+  <script>
+    (function(){
+      function qsParam(name){
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name) || '';
+      }
+      const q = qsParam('q');
+      const lang = qsParam('lang') || qsParam('language') || '';
+      const content = document.getElementById('ws-content');
+      const controls = document.getElementById('ws-controls');
+
+      //Don't need anymore since I removed it from Navbar 
+      // if (!q) {
+      //   content.innerHTML = '<div class="text-muted">No query specified. Click "Word Stats" from the search results to view stats for a query.</div>';
+      //   return;
+      // }
+
+      const labelParts = [`Word stats for: <strong>${q.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</strong>`];
+      if (lang) {
+        labelParts.push(`<span class="badge bg-primary ms-2">Language: ${lang.toUpperCase()}</span>`);
+      }
+      controls.innerHTML = `<div class="mb-2">${labelParts.join(' ')}</div>`;
+      const langSuffix = lang ? `&lang=${encodeURIComponent(lang)}` : '';
+      const endpoint = `/api/wordstats?q=${encodeURIComponent(q)}${langSuffix}`;
+
+      fetch(endpoint)
+        .then(res => {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        }).then(payload => {
+          if (payload.status === 'error' || payload.error) throw new Error(payload.message || payload.error || 'API error');
+          const words = Array.isArray(payload.words) ? payload.words : [];
+          if (!words.length) {
+            content.innerHTML = '<div class="text-muted">No words found in article descriptions.</div>';
+            return;
+          }
+
+          const rows = words.map(w => `<tr><td>${w.word}</td><td class="text-end">${w.count}</td></tr>`).join('');
+          content.innerHTML = `
+            <div class="table-responsive">
+              <table class="table table-sm table-striped">
+                <thead><tr><th>Word</th><th class="text-end">Count</th></tr></thead>
+                <tbody>${rows}</tbody>
+              </table>
+            </div>`;
+        }).catch(err => {
+          content.innerHTML = `<div class="text-danger">Failed to load word stats: ${err.message}</div>`;
+        });
+    })();
+  </script>
+}

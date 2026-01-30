@@ -1,0 +1,287 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #f8f9fa;
+    padding-bottom: 50px;
+}
+
+.demo-section {
+    margin-bottom: 40px;
+}
+
+.demo-title {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.navbar-modern {
+    background: #1a1a1a;
+    border-bottom: 3px solid #0d6efd;
+}
+
+.navbar-modern .navbar-brand,
+.navbar-modern .nav-link {
+    color: #f8f9fa;
+}
+
+.navbar-modern .nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+}
+
+.navbar-modern .nav-link:hover,
+.navbar-modern .nav-link:focus,
+.navbar-modern .nav-link.active {
+    color: #0d6efd !important;
+}
+
+.navbar-modern .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #0d6efd;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-modern .nav-link:hover::after,
+.navbar-modern .nav-link:focus::after,
+.navbar-modern .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-modern .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-modern .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+}
+
+.card-shadow {
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+#results {
+    min-height: 120px;
+}
+
+/* ==========================
+   Hero Section Styles
+   ========================== */
+.nl-hero {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    padding: 2.5rem;
+    margin: 2rem auto;
+    max-width: 900px;
+}
+
+/* Headline Text */
+.nl-hero h2 {
+    font-weight: 600;
+    color: #0b5ed7;
+    margin-bottom: 0.5rem;
+}
+
+.nl-hero p {
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+
+/* Search Form */
+#search-form input[type="text"],
+#search-form select {
+    min-height: 3rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 1rem;
+}
+
+#search-btn {
+    height: 3.1rem;
+    padding: 0 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-btn:hover,
+#search-form button:hover {
+    background-color: #0b5ed7;
+}
+
+/* ==========================
+   Results Area
+   ========================== */
+#results {
+    margin: 2rem auto;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+}
+
+/* Individual result cards */
+#results .card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#results .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+#results .card-title a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+#results .card-title a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================
+   Sentiment Badge Styles
+   ========================== */
+.sentiment-badge {
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.sentiment-happy {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border: 1px solid #b1dfbb;
+}
+
+.sentiment-sad {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border: 1px solid #f1aeb5;
+}
+
+.sentiment-neutral {
+    background: linear-gradient(135deg, #e7f1ff 0%, #cfe2ff 100%);
+    color: #084298;
+    border: 1px solid #9ec5fe;
+}
+
+/* Overall sentiment display */
+.overall-sentiment-container {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin: 1.5rem auto;
+    max-width: 900px;
+    border-left: 4px solid #0d6efd;
+}
+
+.overall-sentiment-container .sentiment-label {
+    font-weight: 600;
+    color: #495057;
+    margin-right: 0.75rem;
+}
+
+.overall-sentiment-container .sentiment-badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+/* ==========================
+   Search Form Layout
+   ========================== */
+/* Make the hero wider to accommodate the form */
+.nl-hero {
+    max-width: 1100px;
+}
+
+/* Multi-select sources height */
+#sources {
+    min-height: 10rem;
+}
+
+.form-select[multiple] {
+    min-height: 10rem;
+}
+
+#sources option[disabled] {
+    color: #888;
+    font-style: italic;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991.98px) {
+    #sources,
+    .form-select[multiple] {
+        min-height: 8rem;
+    }
+}
+
+
+
+/* ==========================
+   Source Directory Page
+   ========================== */
+.source-directory .card {
+    border-radius: .85rem;
+}
+
+.source-directory .list-group-item {
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.source-directory .list-group-item:last-child {
+    border-bottom: none;
+}
+
+.source-directory .list-group-item.active {
+    background: rgba(13, 110, 253, 0.1);
+    color: inherit;
+}
+
+
+#source-articles article:last-child {
+    border-bottom: none;
+}
+
+#source-articles article a {
+    text-decoration: none;
+}
+
+.article-card-header {
+    flex-wrap: nowrap;
+}
+
+.article-card-header .btn {
+    white-space: nowrap;
+}

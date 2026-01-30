@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "sources": [
+    {
+      "id": "le-monde",
+      "name": "Le Monde",
+      "description": "Actualités en continu et articles approfondis sur la politique, l'économie et la technologie.",
+      "url": "https://www.lemonde.fr",
+      "category": "general",
+      "language": "fr",
+      "country": "fr"
+    },
+    {
+      "id": "france24",
+      "name": "France 24",
+      "description": "Les dernières actualités internationales en français.",
+      "url": "https://www.france24.com",
+      "category": "general",
+      "language": "fr",
+      "country": "fr"
+    }
+  ]
+}

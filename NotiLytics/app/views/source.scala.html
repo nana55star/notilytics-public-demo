@@ -1,0 +1,55 @@
+@(selectedId: String, selectedName: String)(implicit request: play.mvc.Http.Request)
+
+@main("Source Directory") {
+  <section id="source-page" class="source-directory" data-selected-id="@selectedId" data-selected-name="@selectedName">
+    <div class="row g-4">
+      <div class="col-lg-4 d-flex flex-column gap-4">
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Search Sources</h2>
+            <div class="mb-3">
+              <label for="source-search-input" class="form-label">Source name</label>
+              <input type="text" id="source-search-input" class="form-control" placeholder="Start typing a source name">
+            </div>
+            <div class="small text-muted mb-2" id="source-search-summary">Type to filter by name</div>
+            <div class="list-group list-group-flush" id="source-search-results" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card shadow-sm border-0 mb-4">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+              <div>
+                <h1 class="h4 mb-1" id="source-profile-name">Select a source to view details</h1>
+                <p class="text-muted mb-2" id="source-profile-description">Search for a news source to view its latest articles.</p>
+              </div>
+              <a id="source-profile-link" class="btn btn-outline-primary disabled" href="#" target="_blank" rel="noopener">
+                Visit website
+              </a>
+            </div>
+
+            <dl class="row mt-3 mb-0" id="source-profile-meta">
+              <dt class="col-sm-3">Category</dt><dd class="col-sm-9" data-field="category">—</dd>
+              <dt class="col-sm-3">Language</dt><dd class="col-sm-9" data-field="language">—</dd>
+              <dt class="col-sm-3">Country</dt><dd class="col-sm-9" data-field="country">—</dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="card shadow-sm border-0">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h5 mb-0">Latest Articles</h2>
+              <span class="text-muted small" id="source-articles-summary">Showing 0 of 0</span>
+            </div>
+            <div id="source-articles" aria-live="polite">
+              <p class="text-muted mb-0">Pick a source to load its latest articles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}
